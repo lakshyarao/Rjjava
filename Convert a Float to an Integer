@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class FloatToIntConverter {
+    public static void main(String[] args) {
+        // Create a Scanner object to take input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read the float input
+        float inputNumber = scanner.nextFloat();
+        
+        // Convert float to integer (truncation occurs)
+        int convertedNumber = (int) inputNumber;
+        
+        // Display the result
+        System.out.println(convertedNumber);
+        
+        // Close the scanner
+        scanner.close();
+    }
+}
