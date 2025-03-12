@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class MaxOfTwo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+       
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+
+       
+        double max = (a > b) ? a : b;
+
+       
+        if (max == (int)max) {
+           
+            System.out.println((int)max);
+        } else {
+            
+            System.out.println(max);
+        }
+
+        sc.close();
+    }
+}
