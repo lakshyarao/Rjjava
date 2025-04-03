@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class PalindromeChecker {
+    public static boolean isPalindrome(int num) {
+        if (num < 0) return false; // Negative numbers cannot be palindromes
+        
+        int original = num, reversed = 0;
+        while (num != 0) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num /= 10;
+        }
+        return original == reversed;
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        sc.close();
+        
+        System.out.println(isPalindrome(num));
+    }
+}
