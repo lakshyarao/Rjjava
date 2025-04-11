@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class ArrayUtils {
+    
+    
+    public static int findSecondLargest(int[] arr) {
+        if (arr.length < 2) {
+            throw new IllegalArgumentException("Array must contain at least two elements.");
+        }
+        
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        
+        for (int num : arr) {
+            if (num > largest) {
+                secondLargest = largest;
+                largest = num;
+            } else if (num > secondLargest && num != largest) {
+                secondLargest = num;
+            }
+        }
+        
+        return secondLargest;
+    }
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        
+        String input = scanner.nextLine();
+        
+        
+        String[] numbers = input.split(",\\s*");
+        int[] arr = new int[numbers.length];
+        
+        
+        for (int i = 0; i < numbers.length; i++) {
+            arr[i] = Integer.parseInt(numbers[i]);
+        }
+        
+        
+        System.out.println(findSecondLargest(arr));
+        
+        scanner.close();
+    }
+}
